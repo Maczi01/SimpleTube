@@ -2,6 +2,8 @@ import styled from "styled-components";
 import React from "react";
 import image from "../assets/coon.png"
 import MovieItem from "./MovieItem";
+import data from '../database'
+
 
 const MovieListGrid = styled.div`
     display: grid;
@@ -12,13 +14,13 @@ const MovieListGrid = styled.div`
     background-color: green;
 `
 
-const MovieList = () => (
+const MovieList = ({list}) => (
     <MovieListGrid>
-        <MovieItem/>
-        <MovieItem/>
-        <MovieItem/>
-        <MovieItem/>
-        <MovieItem/>
+        {list.map(movie =>
+            <MovieItem/>
+        )}
+
+
     </MovieListGrid>
 )
 

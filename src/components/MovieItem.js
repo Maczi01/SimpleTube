@@ -7,7 +7,7 @@ const VideoWrapper = styled.div`
   //width: 300px;
   height: 350px;
   background-color: blue;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 2px solid black;
   margin: 10px 30px 10px 30px;
 `
@@ -26,34 +26,69 @@ const Image = styled.img`
 `
 
 const Avatar = styled.img`
-  width: 80px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
 `
 
 const VideoDescriptionWrapper = styled.div`
+  margin: 10px;
   display: flex;
   flex-direction: column;
 `
 
 const VideoTitle = styled.h3`
   font-weight: bold;
+  font-size: 20px;
+  margin: 2px;
 `
 
 const VideoAuthor = styled.h3`
-  
+  font-weight: normal;
+  font-size: 16px;
 `
 
+var Youtube = (function () {
 
-const VideoItem = () => (
+    var video, results;
+
+    var getThumb = function (url, size) {
+        if (url === null) {
+            return '';
+        }
+        size    = (size === null) ? 'big' : size;
+        results = url.match('[\\?&]v=([^&#]*)');
+        video   = (results === null) ? url : results[1];
+
+        if (size === 'small') {
+            return 'http://img.youtube.com/vi/' + video + '/2.jpg';
+        }
+        return 'http://img.youtube.com/vi/' + video + '/0.jpg';
+    };
+
+    return {
+        thumb: getThumb
+    };
+}());
+
+
+const VideoItem = ({title = "Mamma mia", description = "moj film", link = "https://www.youtube.com/watch?v=UkhHY7U3LwU"}) => (
     <VideoWrapper>
-        <Image src={image}/>
+        <Image src={Youtube.thumb(link)}/>
+            {/*{console.log(Youtube.thumb('http://www.youtube.com/watch?v=F4rBAf1wbq4', 'small'))}*/}
+            {/*<video  width="350" controls="controls" preload="metadata">*/}
+            {/*    <source src=type="video/mp4"/>*/}
+            {/*</video>*/}
+        {/*</Image>*/}
         <VideoFooter>
             <Avatar img={decline}/>
             <VideoDescriptionWrapper>
                 <VideoTitle>
-                    Jak poznałem waszą matkę
+                    {title}
                 </VideoTitle>
                 <VideoAuthor>
-                    Mietczyński
+                    {description}
                 </VideoAuthor>
             </VideoDescriptionWrapper>
         </VideoFooter>
