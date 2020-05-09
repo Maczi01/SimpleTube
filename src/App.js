@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from "./components/Header";
-import MovieList from "./components/MovieList";
-// import data from "../public/database";
+import VideoList from "./components/VideoList";
 
 class App extends React.Component {
 
@@ -10,9 +9,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://my-json-server.typicode.com/typicode/demo/comments")
-        // fetch('http://192.168.1.1:3004/database.json')
-        // fetch('https://api.github.com/users/maczi01/repos?sort=updated&direction=desc')
+        fetch('http://localhost:3000/videos')
             .then((response) => response.json())
             .then(booksList => {
                 this.setState({ movieList: booksList });
@@ -24,7 +21,7 @@ class App extends React.Component {
             <>
                 {console.log(this.state)}
                 <Header/>
-                <MovieList list={this.state.movieList}/>
+                <VideoList list={this.state.movieList}/>
             </>
         );
 

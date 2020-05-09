@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import image from "../assets/coon.png"
-import MovieItem from "./MovieItem";
-import data from '../database'
+import VideoItem from "./VideoItem";
 
 
 const MovieListGrid = styled.div`
@@ -14,14 +13,20 @@ const MovieListGrid = styled.div`
     background-color: green;
 `
 
-const MovieList = ({list}) => (
+const VideoList = ({list}) => (
     <MovieListGrid>
-        {list.map(movie =>
-            <MovieItem/>
+        {list.map((movie, index) =>
+            <VideoItem
+                key={index}
+                title = {movie.title}
+                description={movie.description}
+                link = {movie.video_url}
+
+            />
         )}
 
 
     </MovieListGrid>
 )
 
-export default MovieList;
+export default VideoList;

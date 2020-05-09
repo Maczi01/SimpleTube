@@ -2,10 +2,11 @@ import styled from "styled-components";
 import React from "react";
 import image from "../assets/coon.png"
 import decline from "../assets/decline.svg"
+import rs from "../assets/rs.png"
 
 const VideoWrapper = styled.div`
   //width: 300px;
-  height: 350px;
+  height: 450px;
   background-color: blue;
   border-radius: 5px;
   border: 2px solid black;
@@ -26,14 +27,14 @@ const Image = styled.img`
 `
 
 const Avatar = styled.img`
-  margin: 10px;
-  width: 50px;
+  margin: 5px;
+  min-width: 50px;
   height: 50px;
   margin-right: 20px;
 `
 
 const VideoDescriptionWrapper = styled.div`
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
 `
@@ -41,7 +42,7 @@ const VideoDescriptionWrapper = styled.div`
 const VideoTitle = styled.h3`
   font-weight: bold;
   font-size: 20px;
-  margin: 2px;
+  margin-top: 10px;
 `
 
 const VideoAuthor = styled.h3`
@@ -73,7 +74,7 @@ var Youtube = (function () {
 }());
 
 
-const VideoItem = ({title = "Mamma mia", description = "moj film", link = "https://www.youtube.com/watch?v=UkhHY7U3LwU"}) => (
+const VideoItem = ({title = "Mamma mia", description, link = "https://www.youtube.com/watch?v=UkhHY7U3LwU"}) => (
     <VideoWrapper>
         <Image src={Youtube.thumb(link)}/>
             {/*{console.log(Youtube.thumb('http://www.youtube.com/watch?v=F4rBAf1wbq4', 'small'))}*/}
@@ -82,7 +83,7 @@ const VideoItem = ({title = "Mamma mia", description = "moj film", link = "https
             {/*</video>*/}
         {/*</Image>*/}
         <VideoFooter>
-            <Avatar img={decline}/>
+            <Avatar src={rs}/>
             <VideoDescriptionWrapper>
                 <VideoTitle>
                     {title}
