@@ -17,9 +17,11 @@ const VideoPlayer = () => {
     const player = new Plyr('#player', {});
     return (
         <VideoPlayerWrapper>
-            <StyledVideo>
-                <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="3jTjBt0Enyw"></div>
-            </StyledVideo>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+            {/*<StyledVideo>*/}
+            {/*    <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="Pj79goqJAaQ"></div>*/}
+            {/*</StyledVideo>*/}
         </VideoPlayerWrapper>
     )
 }
