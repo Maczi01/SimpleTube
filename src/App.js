@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "./components/Header";
 import VideoList from "./components/VideoList";
+import VideoPlayer from "./components/VideoPlayer";
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
             <>
                 {console.log(this.state)}
                 <Header/>
+                <VideoPlayer/>
                 <VideoList list={this.state.movieList}/>
             </>
         );
