@@ -13,20 +13,18 @@ class App extends React.Component {
         fetch('http://localhost:3000/videos')
             .then((response) => response.json())
             .then(booksList => {
-                this.setState({ movieList: booksList });
+                this.setState({movieList: booksList});
             });
     }
 
     render() {
         return (
             <>
-                {console.log(this.state)}
                 <Header/>
                 <VideoPlayer/>
                 <VideoList list={this.state.movieList}/>
             </>
         );
-
     }
 }
 

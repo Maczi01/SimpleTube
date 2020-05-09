@@ -10,20 +10,15 @@ const VideoPlayerWrapper = styled.div`
 
 const StyledVideo = styled.div`
       width:100%;
-                height:100%;
+      height:100%;
 `
-
 
 const VideoPlayer = () => {
     const player = new Plyr('#player', {});
-
     return (
         <VideoPlayerWrapper>
-            {/*<video width="100%" controls="controls" preload="metadata">*/}
-            {/*    <source src="http://www.youtube.com/watch?v=F4rBAf1wbq4" type="video/mp4"/>*/}
-            {/*</video>*/}
             <StyledVideo>
-                <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="SPc-oWXEhQQ"></div>
+                <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="3jTjBt0Enyw"></div>
             </StyledVideo>
         </VideoPlayerWrapper>
     )

@@ -1,19 +1,22 @@
 import styled from "styled-components";
 import React from "react";
-import image from "../assets/coon.png"
-import decline from "../assets/decline.svg"
 import rs from "../assets/rs.png"
+import imageFromYT from "../lib/helper";
 
 const VideoWrapper = styled.div`
-  //width: 300px;
   height: 450px;
-  background-color: blue;
+  background-color: white;
   border-radius: 5px;
   border: 2px solid black;
   margin: 10px 30px 10px 30px;
+  :hover{
+  transform: scale(1.01);
+  border: 2px solid #ef4565 ;
+  }
 `
 
 const VideoFooter = styled.div`
+  margin-top: 20px;
   display: flex;
 `
 
@@ -50,38 +53,10 @@ const VideoAuthor = styled.h3`
   font-size: 16px;
 `
 
-var Youtube = (function () {
 
-    var video, results;
-
-    var getThumb = function (url, size) {
-        if (url === null) {
-            return '';
-        }
-        size    = (size === null) ? 'big' : size;
-        results = url.match('[\\?&]v=([^&#]*)');
-        video   = (results === null) ? url : results[1];
-
-        if (size === 'small') {
-            return 'http://img.youtube.com/vi/' + video + '/2.jpg';
-        }
-        return 'http://img.youtube.com/vi/' + video + '/0.jpg';
-    };
-
-    return {
-        thumb: getThumb
-    };
-}());
-
-
-const VideoItem = ({title = "Mamma mia", description, link = "https://www.youtube.com/watch?v=UkhHY7U3LwU"}) => (
+const VideoItem = ({title, description, link}) => (
     <VideoWrapper>
-        <Image src={Youtube.thumb(link)}/>
-            {/*{console.log(Youtube.thumb('http://www.youtube.com/watch?v=F4rBAf1wbq4', 'small'))}*/}
-            {/*<video  width="350" controls="controls" preload="metadata">*/}
-            {/*    <source src=type="video/mp4"/>*/}
-            {/*</video>*/}
-        {/*</Image>*/}
+        <Image src={imageFromYT(link)}/>
         <VideoFooter>
             <Avatar src={rs}/>
             <VideoDescriptionWrapper>

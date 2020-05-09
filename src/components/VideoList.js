@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import image from "../assets/coon.png"
 import VideoItem from "./VideoItem";
 
 
@@ -8,9 +7,10 @@ const MovieListGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
+    //padding: 20px;
     width: 80vw;
-    margin-top: 20px;
-    background-color: green;
+    margin-top: 30px;
+    background-color: #90b4ce;
 `
 
 const VideoList = ({list}) => (
@@ -18,10 +18,9 @@ const VideoList = ({list}) => (
         {list.map((movie, index) =>
             <VideoItem
                 key={index}
-                title = {movie.title}
+                title={movie.title}
                 description={movie.description}
-                link = {movie.video_url}
-
+                link={movie.video_url}
             />
         )}
 
