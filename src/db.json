@@ -2,16 +2,35 @@
   {
     "title": "Flume - Hyperreal",
     "description": "Flume - Hyperreal feat. Kučka\nNew Flume apparel out now: http://flu.me/Store",
-    "video_url": "https://www.youtube.com/watch?v=SPc-oWXEhQQ"
+    "video_url": "https://www.youtube.com/embed?v=SPc-oWXEhQQ"
   },
   {
     "title": "BMX FLATLAND ",
     "description": "BMX FLATLAND FINALS HIGHLIGHTS - FISE CHINA 2019",
-    "video_url": "https://www.youtube.com/watch?v=utPcddvD19o"
+    "video_url": "https://www.youtube.com/embed?v=utPcddvD19o"
   },
   {
     "title": "Mega hits 2020",
     "description": "Dua Lipa, Coldplay, Martin Garrix & Kygo, The Chainsmokers Style - Feeling Me ",
-    "video_url": "https://www.youtube.com/watch?v=OFc28hTZQL0"
+    "video_url": "https://www.youtube.com/embed?v=OFc28hTZQL0"
+  },
+  {
+    "title": "React",
+    "description": "obsluga formularza przez formik",
+    "video_url": "https://www.youtube.com/watch?v=-l3LHvsC3dE"
+  },
+  {
+    "title": "Lofi",
+    "description": "Beats to study",
+    "video_url": "https://www.youtube.com/watch?v=7NOSDKb0HlU"
+  },
+  {
+    "title": "Electronic music",
+    "description": "Electronic music to study",
+    "video_url": "https://www.youtube.com/watch?v=a4fv-BtzNmY&t=5733s"
   }
+
+
+
+
 ]

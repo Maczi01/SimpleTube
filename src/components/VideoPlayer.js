@@ -3,27 +3,44 @@ import React from "react";
 import Plyr from "plyr";
 
 const VideoPlayerWrapper = styled.div`
-  width: 80vw;
+  padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 60vw;
   height: 80vh;
-  margin: 20px auto  ;
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 0 20px 40px -5px rgba(#1e58ff, .3);
+  position: fixed;
+  z-index: 100;
 `
 
-const StyledVideo = styled.div`
+const StyledButton = styled.div`
+ width: 27px;
+  height: 27px;
+  background: #1e58ff;
+  border: none;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+`
+
+const StyledVideo = styled.video`
       width:100%;
       height:100%;
 `
 
-const VideoPlayer = () => {
-    const player = new Plyr('#player', {});
+const VideoPlayer = ({link, show, closeModal}) => {
     return (
-        <VideoPlayerWrapper>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        <VideoPlayerWrapper display={show ? 'none' : 'flex'}>
+            <StyledButton onClick={closeModal}/>
+            <iframe width="100%" height="100%" src={link}>
             </iframe>
-            {/*<StyledVideo>*/}
-            {/*    <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="Pj79goqJAaQ"></div>*/}
-            {/*</StyledVideo>*/}
         </VideoPlayerWrapper>
     )
 }
 
-export default VideoPlayer
+export default VideoPlayer;

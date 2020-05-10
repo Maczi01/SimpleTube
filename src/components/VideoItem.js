@@ -53,9 +53,8 @@ const VideoAuthor = styled.h3`
   font-size: 16px;
 `
 
-
-const VideoItem = ({title, description, link}) => (
-    <VideoWrapper>
+const VideoItem = ({title, description, link, openModal}) => (
+    <VideoWrapper onClick={() => openModal(link.replace(/watch/g, "embed"))}>
         <Image src={imageFromYT(link)}/>
         <VideoFooter>
             <Avatar src={rs}/>
