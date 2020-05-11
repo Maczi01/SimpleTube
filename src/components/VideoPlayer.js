@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import Plyr from "plyr";
 
 const VideoPlayerWrapper = styled.div`
   padding: 10px;

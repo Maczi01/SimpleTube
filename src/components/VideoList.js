@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React from "react";
 import VideoItem from "./VideoItem";
-import VideoPlayer from "./VideoPlayer";
 
 
 const MovieListGrid = styled.div`
@@ -10,7 +9,7 @@ const MovieListGrid = styled.div`
     margin: 0 auto;
     width: 80vw;
     margin-top: 30px;
-    background-color: #90b4ce;
+    background-color: #d1d1e9;
 `
 
 const VideoList = ({list, openModal, closeModal}) => (
