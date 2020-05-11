@@ -19,28 +19,32 @@ const VideoPlayerWrapper = styled.div`
 `
 
 const StyledButton = styled.div`
- width: 27px;
+  width: 27px;
   height: 27px;
+  padding-top: 5px;
   background: #1e58ff;
   border: none;
+  text-align: center;
   position: absolute;
   right: 30px;
   top: 30px;
 `
 
-const StyledVideo = styled.video`
-      width:100%;
-      height:100%;
+const StyledVideo = styled.iframe`
+      margin-top: 60px;
 `
 
 const VideoPlayer = ({link, show, closeModal}) => {
     return (
-        <VideoPlayerWrapper display={show ? 'none' : 'flex'}>
-            <StyledButton onClick={closeModal}/>
-            <iframe width="100%" height="100%" src={link}>
-            </iframe>
+        <VideoPlayerWrapper display={show ? 'none' : 'flex'} onClick={closeModal}>
+            <StyledButton>X</StyledButton>
+            <div className="plyr__video-embed" id="player">
+                <StyledVideo width="100%" height="80%" src={link}>
+                </StyledVideo>
+            </div>
         </VideoPlayerWrapper>
     )
 }
+
 
 export default VideoPlayer;
