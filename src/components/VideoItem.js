@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import rs from "../assets/rs.png"
-import imageFromYT from "../lib/helper";
+import {imageFromYT, changeLinkForItem} from "../lib/Helper";
 
 const VideoWrapper = styled.div`
   height: 450px;
@@ -54,7 +54,7 @@ const VideoAuthor = styled.h3`
 `
 
 const VideoItem = ({title, description, link, openModal}) => (
-    <VideoWrapper onClick={() => openModal(link.replace(/watch/g, "embed"))}>
+    <VideoWrapper onClick={() => openModal(changeLinkForItem(link))}>
         <Image src={imageFromYT(link)}/>
         <VideoFooter>
             <Avatar src={rs}/>

@@ -7,4 +7,6 @@ const imageFromYT = (link) => {
     return 'http://img.youtube.com/vi/' + video + '/0.jpg';
 };
 
-export default imageFromYT;
+const changeLinkForItem = (link) => link.replace(/watch/g, "embed")
+
+export {imageFromYT, changeLinkForItem} ;

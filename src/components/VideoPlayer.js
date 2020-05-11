@@ -17,18 +17,6 @@ const VideoPlayerWrapper = styled.div`
   z-index: 100;
 `
 
-const StyledButton = styled.div`
-  width: 27px;
-  height: 27px;
-  padding-top: 5px;
-  background: #1e58ff;
-  border: none;
-  text-align: center;
-  position: absolute;
-  right: 30px;
-  top: 30px;
-`
-
 const StyledVideo = styled.iframe`
       margin-top: 60px;
 `
@@ -36,7 +24,6 @@ const StyledVideo = styled.iframe`
 const VideoPlayer = ({link, show, closeModal}) => {
     return (
         <VideoPlayerWrapper display={show ? 'none' : 'flex'} onClick={closeModal}>
-            <StyledButton>X</StyledButton>
             <div className="plyr__video-embed" id="player">
                 <StyledVideo width="100%" height="80%" src={link}>
                 </StyledVideo>

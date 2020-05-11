@@ -48,12 +48,10 @@ class App extends React.Component {
             <>
                 <Header/>
                 {showModal && <VideoPlayer link={currentVideo}
-                                           openModal={this.openModal}
                                            closeModal={this.closeModal}
                 />}
                 <VideoList list={this.state.movieList}
                            openModal={this.openModal}
-                           closeModal={this.closeModal}
                 />
             </>
         );
