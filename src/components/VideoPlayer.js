@@ -21,9 +21,9 @@ const StyledVideo = styled.iframe`
       margin-top: 60px;
 `
 
-const VideoPlayer = ({link, show, closeModal}) => {
+const VideoPlayer = ({link, closeModal}) => {
     return (
-        <VideoPlayerWrapper display={show ? 'none' : 'flex'} onClick={closeModal}>
+        <VideoPlayerWrapper onClick={closeModal}>
             <div className="plyr__video-embed" id="player">
                 <StyledVideo width="100%" height="80%" src={link}>
                 </StyledVideo>

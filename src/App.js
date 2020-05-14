@@ -2,13 +2,12 @@ import React from 'react';
 import Header from "./components/Header";
 import VideoList from "./components/VideoList";
 import VideoPlayer from "./components/VideoPlayer";
-import db from './db.json';
 
 class App extends React.Component {
 
     state = {
         showModal: false,
-        currentVideo: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+        currentVideo: '',
         movieList: []
     };
 
@@ -32,14 +31,11 @@ class App extends React.Component {
     }
 
     getMovieList() {
-        this.setState({
-            movieList: db
-        })
-        // fetch('http://localhost:3000/videos')
-        //     .then((response) => (response.json()))
-        //     .then(booksList => {
-        //         this.setState({movieList: booksList});
-        //     });
+        fetch('/db.json')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({movieList: data});
+            });
     }
 
     render() {
