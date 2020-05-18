@@ -1,5 +1,5 @@
 const imageFromYT = (link) => {
-    const signature = link.split("https://www.youtube.com/embed/").pop();
+    const signature = link.split("https://youtu.be/").pop();
     const newLink = 'https://www.youtube.com/watch?v=' + signature
     const results = newLink.match('[\\?&]v=([^&#]*)');
     const video = (results === null) ? link : results[1];
