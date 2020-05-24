@@ -2,6 +2,11 @@ import React from 'react';
 import Header from "./components/Header";
 import VideoList from "./components/VideoList";
 import VideoPlayer from "./components/VideoPlayer";
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import MainView from "./views/MainView";
+import AppContext from "./context/context";
+import context from "react-router/modules/RouterContext";
+import AddView from "./views/AddView";
 
 class App extends React.Component {
 
@@ -40,16 +45,23 @@ class App extends React.Component {
 
     render() {
         const {showModal, currentVideo} = this.state;
+        const contextElement = {
+            ...this.state,
+            openModal: this.openModal
+        }
         return (
-            <>
-                <Header/>
-                {showModal && <VideoPlayer link={currentVideo}
-                                           closeModal={this.closeModal}
-                />}
-                <VideoList list={this.state.movieList}
-                           openModal={this.openModal}
-                />
-            </>
+            <Router>
+                <AppContext.Provider value={contextElement}>
+                    <Header/>
+                    <Route exact path="/" component={MainView}/>
+                    <Route path="/add" component={AddView}/>
+                    {/*{showModal && <VideoPlayer link={currentVideo}*/}
+                    {/*                           closeModal={this.closeModal}*/}
+                    {/*/>}*/}
+
+
+                </AppContext.Provider>
+            </Router>
         );
     }
 }

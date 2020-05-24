@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import logo from "../assets/logo.png"
+import {NavLink} from "react-router-dom";
 
 const HeaderWrapper = styled.nav`
     width: 100vw;
@@ -32,7 +33,10 @@ const Header = () => (
         <StyledTitle>
             SimpleTube
         </StyledTitle>
-        <LogoWrapper src={logo}/>
+        <NavLink as Link to={"/"}>
+            <LogoWrapper src={logo}/>
+        </NavLink>
+        <NavLink to="/add">add</NavLink>
     </HeaderWrapper>
 )
 
