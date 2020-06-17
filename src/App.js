@@ -55,11 +55,6 @@ class App extends React.Component {
                     <Header/>
                     <Route exact path="/" component={MainView}/>
                     <Route path="/add" component={AddView}/>
-                    {/*{showModal && <VideoPlayer link={currentVideo}*/}
-                    {/*                           closeModal={this.closeModal}*/}
-                    {/*/>}*/}
-
-
                 </AppContext.Provider>
             </Router>
         );
